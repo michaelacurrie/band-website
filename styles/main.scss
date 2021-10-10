@@ -1,0 +1,278 @@
+@use "./partials/mixins" as *;
+@use "./partials/variables" as *;
+@use "./partials/typography" as *;
+
+// --------------------------------------------------------------------------
+
+// * {
+//   // border: 1px solid gold;
+// }
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100%;
+  font-family: "avenirNext";
+
+  @include tablet {
+    // overflow-x: hidden;
+    // width: 100%;
+  }
+}
+
+img {
+  max-width: 100%;
+}
+// Navigation Bar
+
+.navigation {
+  background-color: $primary-color-bb;
+
+  @include tablet {
+    @media (min-width: $tablet-size) {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      font-size: 24px;
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    justify-content: center;
+    padding-top: 24px;
+
+    @include tablet {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      padding: 0px;
+      margin: 25px;
+    }
+  }
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    width: 80px;
+  }
+
+  &__list,
+  li {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    color: white;
+    padding: $mobile-bp;
+
+    @include tablet {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+
+  // ----------TABLET SIZE NAVIGATION------------
+  // @include tablet {
+  //   .navigation {
+  //     display: flex;
+  //     justify-content: flex-start;
+  //     font-size: 24px;
+  //   }
+  // }
+}
+
+// Hero Section
+
+.hero-header {
+  @include heroSection;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 30vw;
+
+  &__container {
+    // margin-left: 40px;
+    margin-top: 100px;
+    margin-right: 30px;
+
+    padding-left: 20px;
+
+    @include tablet {
+      margin-top: 70px;
+    }
+  }
+
+  & h1 {
+    font-size: 24px;
+    font-family: "avenirNext";
+    font-weight: 700;
+    color: white;
+    margin-top: -70px;
+    margin-right: 50px;
+
+    @include tablet {
+      font-size: 60px;
+
+      padding-top: 80px;
+    }
+  }
+}
+
+// CONTENT SECTION
+
+.content-section {
+  @include contentSection;
+
+  &__container,
+  p {
+    font-family: "avenirNext";
+    font-size: 13px;
+    font-weight: 400;
+    color: $primary-color-bb;
+    padding: 16px;
+    line-height: 16px;
+  }
+
+  &__container,
+  q {
+    padding: 16px;
+    font-family: "avenirNext";
+    font-size: 14px;
+    font-weight: 600;
+    color: $primary-color-bb;
+  }
+}
+
+.article {
+  justify-content: center;
+  &__musician-title {
+    font-family: "avenirNext";
+    font-size: 24px;
+    font-weight: 700;
+    align-items: center;
+    padding: 24px 0 16px 10px;
+  }
+
+  &__interview,
+  img {
+    @include tablet {
+      padding: 24px;
+      font-size: 24px;
+    }
+  }
+
+  &__band-title {
+    font-family: "avenirNext";
+    font-size: 24px;
+    font-weight: 600;
+    padding: 24px 0 16px 10px;
+  }
+
+  &__quote {
+    font-weight: 600;
+  }
+}
+
+// PHOTO GALLERY
+.photo-gallery-container {
+  background-color: #e1e1e1;
+  &__title {
+    font-family: "avenirNext";
+    font-size: 24px;
+    font-weight: 600;
+    padding: 24px 0 16px 10px;
+  }
+}
+.photo-gallery-box {
+  display: flex;
+  // flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.box {
+  padding: $mobile-bp;
+
+  //   @include tablet {
+  //     display: flex;
+  //     flex-wrap: wrap;
+  //   }
+  // }
+
+  .box__img {
+    @include photoGallery;
+  }
+}
+
+//---------- FOOTER SECTION--------------------
+
+.footer {
+  @include footer;
+
+  &__h4 {
+    font-weight: 700;
+    font-size: 24px;
+  }
+
+  .social-media-box {
+    @include socialIcons;
+
+    &__list__icons {
+      display: flex;
+    }
+  }
+}
+
+.manager-box__details p {
+  font-weight: bold;
+  padding-bottom: $mobile-bp;
+}
+
+.address-box__details,
+.address-box__text {
+  font-weight: 600;
+  padding-bottom: $mobile-bp;
+}
+
+.pearl__info,
+.pearl__text {
+  font-weight: bold;
+  padding-bottom: $mobile-bp;
+}
+
+.booking-pearl,
+.booking-pearl__text {
+  font-weight: 600;
+}
+
+.contact-pearl,
+.contact-pearl_email {
+  font-weight: 600;
+  padding-bottom: $mobile-bp;
+}
+
+.carson__info,
+.carson__text {
+  font-weight: 700;
+  padding-bottom: $mobile-bp;
+}
+
+.booking-carson,
+.booking-carson__text {
+  font-weight: 600;
+}
+
+.contact-carson,
+.contact-carson__email {
+  font-weight: 600;
+}
+
+.copyright-box__text {
+  font-size: 10px;
+}

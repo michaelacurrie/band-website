@@ -1,0 +1,103 @@
+@use "./variables" as *;
+@use "./typography" as *;
+
+$tablet-size: 768px;
+// MIXINS --> to use on page I will use @include and then the name of the mixin.
+
+// Responsive Mixins
+
+@mixin tablet {
+  @media (min-width: $tablet-size) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: 1290) {
+    @content;
+  }
+}
+
+@mixin buttonDesign {
+  height: 40px;
+  border-radius: 4px;
+}
+
+@mixin NavBarLogo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin heroSection {
+  background: linear-gradient(
+      rgba($primary-color-bb, 0.5),
+      rgba($primary-color-bb, 0.9)
+    ),
+    url(../../assets/Images/hero-bio.jpg);
+}
+
+@mixin mobileHeader {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 32px;
+  color: #fff;
+}
+
+@mixin contentSection {
+  display: flex;
+  justify-content: center;
+  // align-items: center;
+  flex-direction: column;
+}
+
+@mixin photoGallery {
+  background-color: $secondary-color-mercury;
+}
+
+// @mixin photoSize {
+//   width: 400px;
+//   height: 400px;
+// }
+
+@mixin footer {
+  background-color: #323232;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  font-family: "avenirNext";
+  font-size: 13px;
+  font-weight: 400;
+  padding: 24px 0 16px 0;
+
+  & h4 {
+    padding: 16px;
+    font-weight: 700;
+    font-size: 24px;
+  }
+
+  & p {
+    padding: 16px;
+  }
+}
+
+@mixin socialIcons {
+  display: flex;
+  justify-content: flex-start;
+  font-weight: bold;
+
+  &__list,
+  img {
+    list-style: none;
+    display: flex;
+    justify-content: flex-start;
+    padding: 8px;
+    font-weight: bold;
+  }
+
+  &__list__icons {
+    margin-right: 15px;
+    padding: 0 10px;
+    font-weight: bold;
+  }
+}
